@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Vibe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="brand-badge">Team Vibe</div>
+      <h1>Make employee engagement feel simple, social, and uplifting.</h1>
+      <p>
+        A lightweight experience for signing in, setting up a profile, discovering events,
+        and joining moments that bring teams together.
+      </p>
+
+      <div class="hero-highlights">
+        <article>
+          <span>01</span>
+          <h2>Simple onboarding</h2>
+          <p>Move from login to profile setup in a guided, friendly flow.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Discover events</h2>
+          <p>Browse upcoming activities and join with a single click.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Instant feedback</h2>
+          <p>Clear confirmations reassure users after every key action.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen-panel">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Employee Engagement App</p>
+          <h2 id="screenTitle">Welcome back</h2>
+        </div>
+        <div class="progress-indicator">
+          <span class="progress-dot active"></span>
+          <span class="progress-dot"></span>
+          <span class="progress-dot"></span>
+          <span class="progress-dot"></span>
+        </div>
+      </header>
+
+      <div class="status-message" id="statusMessage" aria-live="polite"></div>
+
+      <div class="screen-container">
+        <section class="screen active" id="loginScreen" data-title="Welcome back" data-step="1">
+          <div class="screen-copy">
+            <h3>Log in to Team Vibe</h3>
+            <p>Use your work email to continue to your team engagement space.</p>
+          </div>
+
+          <form id="loginForm" class="card form-card">
+            <label>
+              <span>Email</span>
+              <input type="email" id="email" placeholder="you@company.com" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" id="password" placeholder="Enter your password" required />
+            </label>
+            <button type="submit" class="primary-btn">Continue</button>
+          </form>
+        </section>
+
+        <section class="screen" id="profileScreen" data-title="Set up your profile" data-step="2">
+          <div class="screen-copy">
+            <h3>Create your employee profile</h3>
+            <p>Tell us a bit about yourself so Team Vibe can feel more personal.</p>
+          </div>
+
+          <form id="profileForm" class="card form-card">
+            <label>
+              <span>Full name</span>
+              <input type="text" id="name" placeholder="Your full name" required />
+            </label>
+            <label>
+              <span>Department</span>
+              <input type="text" id="department" placeholder="e.g. Design, HR, Engineering" required />
+            </label>
+            <label>
+              <span>Birthday</span>
+              <input type="date" id="birthday" required />
+            </label>
+
+            <div class="button-row">
+              <button type="button" class="secondary-btn" data-go-to="loginScreen">Back</button>
+              <button type="submit" class="primary-btn">Save profile</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="screen" id="eventScreen" data-title="Join team events" data-step="3">
+          <div class="screen-copy">
+            <h3>Upcoming team events</h3>
+            <p>Select an event to join and keep your workplace energy high.</p>
+          </div>
+
+          <div class="event-list">
+            <article class="card event-card">
+              <div>
+                <p class="event-tag">Wellness</p>
+                <h4>Morning Yoga Session</h4>
+                <p>Tuesday · 8:00 AM · Rooftop Studio</p>
+              </div>
+              <button class="primary-btn join-btn" data-event="Morning Yoga Session">Join event</button>
+            </article>
+
+            <article class="card event-card">
+              <div>
+                <p class="event-tag">Social</p>
+                <h4>Friday Team Lunch</h4>
+                <p>Friday · 12:30 PM · Central Cafe</p>
+              </div>
+              <button class="primary-btn join-btn" data-event="Friday Team Lunch">Join event</button>
+            </article>
+
+            <article class="card event-card">
+              <div>
+                <p class="event-tag">Learning</p>
+                <h4>Creative Ideas Workshop</h4>
+                <p>Next Monday · 3:00 PM · Innovation Room</p>
+              </div>
+              <button class="primary-btn join-btn" data-event="Creative Ideas Workshop">Join event</button>
+            </article>
+          </div>
+
+          <div class="button-row">
+            <button type="button" class="secondary-btn" data-go-to="profileScreen">Back</button>
+          </div>
+        </section>
+
+        <section class="screen" id="confirmationScreen" data-title="Action completed" data-step="4">
+          <div class="card confirmation-card">
+            <div class="success-icon">✓</div>
+            <p class="confirmation-label">Success</p>
+            <h3 id="confirmationHeading">You're all set!</h3>
+            <p id="confirmationMessage">
+              Your action was completed successfully.
+            </p>
+
+            <div class="button-row stacked-on-mobile">
+              <button type="button" class="secondary-btn" id="viewEventsBtn">View events</button>
+              <button type="button" class="primary-btn" id="startOverBtn">Start over</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
